@@ -68,49 +68,49 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
     public void invokeDefaultOnBackPressed() {
         super.onBackPressed();
     }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        if (mReactInstanceManager != null) {
-            mReactInstanceManager.onPause();
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        if (mReactInstanceManager != null) {
-            mReactInstanceManager.onResume(this, this);
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        if (mReactInstanceManager != null) {
-            mReactInstanceManager.onDestroy();
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (mReactInstanceManager != null) {
-            mReactInstanceManager.onBackPressed();
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    @Override
-    public boolean onKeyUp(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_MENU && mReactInstanceManager != null) {
-            mReactInstanceManager.showDevOptionsDialog();
-            return true;
-        }
-        return super.onKeyUp(keyCode, event);
-    }
+//
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//
+//        if (mReactInstanceManager != null) {
+//            mReactInstanceManager.onPause();
+//        }
+//    }
+//
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//
+//        if (mReactInstanceManager != null) {
+//            mReactInstanceManager.onResume(this, this);
+//        }
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//
+//        if (mReactInstanceManager != null) {
+//            mReactInstanceManager.onDestroy();
+//        }
+//    }
+//
+//    @Override
+//    public void onBackPressed() {
+//        if (mReactInstanceManager != null) {
+//            mReactInstanceManager.onBackPressed();
+//        } else {
+//            super.onBackPressed();
+//        }
+//    }
+//
+//    @Override
+//    public boolean onKeyUp(int keyCode, KeyEvent event) {
+//        if (keyCode == KeyEvent.KEYCODE_MENU && mReactInstanceManager != null) {
+//            mReactInstanceManager.showDevOptionsDialog();
+//            return true;
+//        }
+//        return super.onKeyUp(keyCode, event);
+//    }
 }
