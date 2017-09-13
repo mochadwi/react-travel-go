@@ -30,11 +30,11 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == OVERLAY_PERMISSION_REQ_CODE) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (!Settings.canDrawOverlays(this)) {
-                    Toast.makeText(this, "You cannot open the React Native app as you have denied the permission", Toast.LENGTH_SHORT).show();
-                }
-            }
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                if (!Settings.canDrawOverlays(this)) {
+//                    Toast.makeText(this, "You cannot open the React Native app as you have denied the permission", Toast.LENGTH_SHORT).show();
+//                }
+//            }
         }
     }
 
@@ -42,13 +42,13 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (!Settings.canDrawOverlays(this)) {
-                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                        Uri.parse("package:" + getPackageName()));
-                startActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE);
-            }
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            if (!Settings.canDrawOverlays(this)) {
+//                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+//                        Uri.parse("package:" + getPackageName()));
+//                startActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE);
+//            }
+//        }
 
         mReactRootView = new ReactRootView(this);
         mReactInstanceManager = ReactInstanceManager.builder()
@@ -59,7 +59,7 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
-        mReactRootView.startReactApplication(mReactInstanceManager, "AwesomeReactApp", null);
+        mReactRootView.startReactApplication(mReactInstanceManager, "AwesomeProject", null);
 
         setContentView(mReactRootView);
     }
