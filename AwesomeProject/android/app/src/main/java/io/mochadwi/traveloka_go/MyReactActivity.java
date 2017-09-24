@@ -74,7 +74,7 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
         super.onPause();
 
         if (mReactInstanceManager != null) {
-            mReactInstanceManager.onHostPause();
+            mReactInstanceManager.onHostPause(this);
         }
     }
 
@@ -92,7 +92,7 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
         super.onDestroy();
 
         if (mReactInstanceManager != null) {
-            mReactInstanceManager.onHostDestroy();
+            mReactInstanceManager.onHostDestroy(this);
         }
     }
 
